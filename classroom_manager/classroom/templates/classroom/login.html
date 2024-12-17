@@ -1,0 +1,30 @@
+<!-- templates/classroom/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Professor Login</title>
+</head>
+<body>
+    <h1>Professor Login</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+        </p>
+        <button type="submit">Login</button>
+    </form>
+    <p>
+        <a href="{% url 'classroom:register' %}">Register as new professor</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Classroom Photos</title>
+</head>
+<body>
+    <h1>Classroom Photos</h1>
+    <div style="margin-bottom: 20px;">
+        <p>Welcome, Professor {{ request.user.username }} ({{ request.user.department }})</p>
+        <a href="{% url 'classroom:logout' %}">Logout</a>
+    </div>
+    <a href="{% url 'classroom:upload_class' %}">Upload New Photo</a>
+    <hr>
+    {% for photo in photos %}
+        <div style="margin-bottom:20px;">
+            <!-- 사진 표시 -->
+            <img src="{{ photo.image.url }}" alt="Classroom Photo" style="max-width:300px; display:block;">
+            <!-- 인원 수, 업데이트 시간 표시 -->
+            <p>Number of people: {{ photo.number_of_people }}</p>
+            <p>Uploaded at: {{ photo.uploaded_at }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
