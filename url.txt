@@ -1,0 +1,9 @@
+ppt 레포트는 용량 관련 이슈로 zip파일로 압축되어 있습니다.
+
+서비스 URL: http://meongju0o0.pythonanywhere.com/index/
+ID: admin, PW: admin
+ID: meongju0o0, PW: 12345
+ID: bl4angel20, PW: 12345
+ID: temp, PW: 12345
+
+소스코드 git 주소: https://github.com/meongju0o0/mobile-webservice-final-project
